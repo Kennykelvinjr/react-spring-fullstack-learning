@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 // The SchoolController class provides endpoints for creating, reading, updating, and deleting School entities. Each method is mapped to a specific HTTP method (POST, GET, PUT, DELETE) and URL pattern to handle the corresponding CRUD operation.
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/schools")
 public class SchoolController {

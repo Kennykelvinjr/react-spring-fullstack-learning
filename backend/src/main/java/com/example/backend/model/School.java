@@ -16,7 +16,7 @@ import lombok.*;
 // The School class represents a school entity with various attributes such as name, address, phone number, email, and website. It uses JPA annotations to define the primary key and generation strategy for the ID field.
 public class School {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // This annotation specifies that the ID should be generated automatically by the database using an identity column.
     private Long id;
 
     private String name;

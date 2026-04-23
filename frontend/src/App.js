@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Schools from "./pages/Schools";
+import AddSchool from "./pages/AddSchool";
+import EditSchool from "./pages/EditSchool";
+import ViewSchool from "./pages/ViewSchool";
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:8080/")
-      .then(res => res.text())
-      .then(data => setMessage(data));
-  }, []);
-
   return (
-    <div style={{ padding: 20 }}>
-      <h1>React Frontend</h1>
-      <p>{message}</p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Schools />} />
+        <Route path="/add-school" element={<AddSchool />} />
+        <Route path="/edit/:id" element={<EditSchool />} />
+        <Route path="/view/:id" element={<ViewSchool />} />
+      </Routes>
+    </Router>
   );
 }
 
